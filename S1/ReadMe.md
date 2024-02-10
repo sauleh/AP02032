@@ -20,5 +20,17 @@
 - طول عمر یک شیء
 - public/private
 
-HW
- - string class
+کار کلاسی
+در پوشه C1
+
+class Circle
+{
+// مرکز Point
+// شعاع double
+public:
+    Circle(Point p, double r);
+    double Circumference();
+    double Area();
+    double DistanceTo(const Circle &c);
+    double DistanceTo(const Point &p);
+};

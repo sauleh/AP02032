@@ -78,17 +78,6 @@ public:
     }
 };
 
-class Circle
-{
-// مرکز Point
-// شعاع double
-public:
-    Circle(Point p, double r);
-    double Circumference();
-    double Area();
-    double DistanceTo(const Circle &c);
-    double DistanceTo(const Point &p);
-};
 
 class Triangle
 {
