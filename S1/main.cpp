@@ -3,55 +3,148 @@
 
 using namespace std;
 
-class Point
+class PositivePoint
 {
-public:
+private:
     int m_x; // Member variable
     int m_y;
+    bool m_values_arevalid;
 
-    Point(int x, int y)
+
+public:
+    PositivePoint(int x, int y)
     {
-        m_x = x;
-        m_y = y;
+        m_values_arevalid = true;
+        m_x = 0;
+        m_y = 0;
+        if (x > 0)        
+            m_x = x;
+        if (y > 0)
+            m_y = y;
+        m_values_arevalid = (m_x > 0) && (m_y > 0);
     }
 
-    Point(const Point& p) // const correctness
+    PositivePoint(const PositivePoint& p) // const correctness
     {
         m_x = p.m_x;
         m_y = p.m_y;
     }
 
+    ~PositivePoint()
+    {
+        print();
+        cout << "Destructor Called" << endl;
+    }
+
+    int get_X() { return m_x; }
+    int get_Y() { return m_y; }
+
+    void set_X(int x)
+    {
+        if (x > 0)
+            m_x = x;        
+    }
+    void set_Y(int y)
+    {
+        if (y > 0)
+            m_y = y;
+    }
+
     void print()
     {
+        if (! m_values_arevalid) 
+        {
+            cout << "invalid coordinate" << endl;
+            return;
+        }
+
         cout << "the point has x = " << m_x << " and y = " << m_y << endl;
     }
 
-    double diff(Point p)
+    double diff(PositivePoint p)
     {
-        double xdiff = m_x - p.m_x;
-        double ydiff = m_y - p.m_y;
-        return sqrt(xdiff * xdiff + ydiff * ydiff);
+        if (m_values_arevalid && p.m_values_arevalid)
+        {
+            double xdiff = m_x - p.m_x;
+            double ydiff = m_y - p.m_y;
+            return sqrt(xdiff * xdiff + ydiff * ydiff);
+        }
+        return 0;
     }
 
-    bool are_equal(Point p)
+    bool are_equal(PositivePoint p)
     {
         return (m_x == p.m_x) && (m_y == p.m_y);
     }
 };
 
+class Circle
+{
+// مرکز Point
+// شعاع double
+public:
+    Circle(Point p, double r);
+    double Circumference();
+    double Area();
+    double DistanceTo(const Circle &c);
+    double DistanceTo(const Point &p);
+};
+
+class Triangle
+{
+    PositivePoint m_p1;
+    PositivePoint m_p2;
+    PositivePoint m_p3;
+
+public:
+    Triangle(PositivePoint p1, PositivePoint p2, PositivePoint p3) 
+        : m_p1(p1)
+        , m_p2(p2)
+        , m_p3(p3)
+    {
+    }
+};
 
 int main()
 {
-    Point p1(2, 3);
+    int x;
+    cin >> x;
+    PositivePoint p1(4, 4);
+    if (x % 2 == 0)
+    {
+        p1.print();
+        PositivePoint p7(9, 9);
+        p7.print();
+    } else {
+        PositivePoint p1(91, 91);
+        p1.print();
+    }
     p1.print();
-    Point p2(4, 7);
+    cin >> x;
+    cout << x << endl;
+    return 0;
+}
+
+int main883()
+{
+    PositivePoint p1(2, 3);
+    // p1.m_x = -5;
+    // p1.m_y = -6;
+    p1.set_X(-5);
+    p1.set_Y(-6);
+    p1.print();
+    p1.set_X(12);
+    p1.print();
+    cout << p1.get_X() << endl;
+    cout << p1.get_Y() << endl;
+    PositivePoint p2(4, 7);
     p2.print();
     double d1 = p1.diff(p2);
     double d2 = p2.diff(p1);
     cout << d1 << endl;
     cout << d2 << endl;
 
-    Point p3(p1);
+    PositivePoint p3(p1);
     return 0;
 }
 
