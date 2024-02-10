@@ -27,11 +27,33 @@ jobs:
       with:
         dotnet-version: ${{ env.DOTNET_VERSION }}
 
+    - name: Find solution files
+      id: find-solutions
+      run: |
+        find . -type f -name '*.sln' -print > solutions.txt
+        echo "::set-output name=solutions::$(cat solutions.txt)"
+
     - name: Install dependencies
-      run: dotnet restore
-      
-    - name: Build
-      run: dotnet build --configuration Release --no-restore
-    
-    - name: Test
-      run: dotnet test --no-restore --verbosity normal
+      run: |
+        IFS=$'\n'
+        for solution in $(cat ${{ steps.find-solutions.outputs.solutions }}); do
+          echo "Restoring $solution"
+          dotnet restore $solution
+        done
+
+    - name: Building solutions
+      run: |
+        IFS=$'\n'
+        for solution in $(cat ${{ steps.find-solutions.outputs.solutions }}); do
+          echo "Building $solution"
+          dotnet build --configuration Release --no-restore $solution
+        done
+
+
+    - name: Testing Solutions
+      run: |
+        IFS=$'\n'
+        for solution in $(cat ${{ steps.find-solutions.outputs.solutions }}); do
+          echo "Restoring $solution"
+          dotnet test --no-restore --verbosity normal $solution
+        done        
