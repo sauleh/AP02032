@@ -34,8 +34,11 @@ public:
 - مثال لیست
     - class liist {
         liist();
-        liist(int* nums, int count)
-        liist
+        liist(int* nums, int count);
+        liist(const liist& other);
+        void add(int i);
+        void remove(int loc);
+        int get(int loc);
     }
     - template
 - کار کلاسی
@@ -55,6 +58,5 @@ public:
         str reverse() const;
         char get_char(int loc);
     }
-
 
 - کلاس جبرانی چهارشنبه 
