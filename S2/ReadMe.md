@@ -56,7 +56,7 @@ public:
         str substr(int start, int count) const;
         void remove(int start, int count);
         str reverse() const;
-        char get_char(int loc);
+        char get_char(int loc) const;
     }
 
 - کلاس جبرانی چهارشنبه 

@@ -27,6 +27,7 @@ void swap(int& a, int &b)
     b = x;
 }
 
+template<typename T>
 class liist
 {
     int m_size;
