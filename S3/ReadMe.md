@@ -11,4 +11,4 @@
 - smart pointers: (https://www.internalpointers.com/post/beginner-s-look-smart-pointers-modern-c)
     - make_unique
     - make_shared (reference counting)
-- copy constructor problem (shared data)
+- copy constructor problem (shared data) (not delivered)
