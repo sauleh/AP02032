@@ -14,7 +14,13 @@
 - copy constructor problem (shared data) (not delivered)
 
 
-- کار کلاسی اختیاری:
+-   کار کلاسی اختیاری: کلاس زیر را تا هرجا که توانستید پیاده‌سازی کنید
+- اگر علاقمند بودید، تغییر بدهید که بجای 
+    T*
+    از
+    unique_ptr<T>
+    استفاده شود.
+    
 template<typename T>
 class Matrix {
 private:
