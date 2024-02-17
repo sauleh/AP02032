@@ -12,3 +12,25 @@
     - make_unique
     - make_shared (reference counting)
 - copy constructor problem (shared data) (not delivered)
+
+
+- کار کلاسی اختیاری:
+template<typename T>
+class Matrix {
+private:
+    T* data;
+    size_t rows;
+    size_t columns;
+
+public:
+    Matrix(size_t numRows, size_t numColumns);
+    size_t numRows() const;
+    size_t numColumns() const;
+    T& at(size_t row, size_t col);
+    const T& at(size_t row, size_t col) const;
+    Matrix<T> add(const Matrix<T>& other) const;
+    Matrix<T> multiply(const Matrix<T>& other) const;
+    Matrix<T> multiply(const T& scalar) const;
+    Matrix<T> transpose() const;
+    void display() const;
+};
