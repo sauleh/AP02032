@@ -2,6 +2,8 @@
 #include <string>
 #include <vector>
 
+using namespace std;
+
 class Student {
     friend class Course;
 private:
@@ -37,6 +39,14 @@ public:
     }
 
     std::string displayStudentGrades(const std::string& studentName) const {
+        std::string s = "";
+        for (int i = 0; i < students.size(); i++)
+        {
+            s += students[i].grades[0] + "\n";
+        }
+        for (const Student &s : students)
+        {
+        }
     }
 };
 
@@ -46,6 +56,11 @@ private:
     Course& course;
 
 public:
+    Course& get_course() const
+    {
+
+    }
+
     Instructor(const std::string& name, Course& courseObj)
     {}
     
