@@ -37,9 +37,11 @@ class Program
         // for (int i = 0; i < lines.Length; i++)
         //     lines[i] = nums[i].ToString();
         // File.WriteAllLines("test.csv", lines);
-        string[] lines = File.ReadAllLines("test.csv");
-        for(int i=0; i<lines.Length;i++)
-            System.Console.WriteLine(lines[i]);
+        // string[] lines = File.ReadAllLines("test.csv");
+        // for(int i=0; i<lines.Length;i++)
+        //     System.Console.WriteLine(lines[i]);
+        int x = int.MaxValue;
+        System.Console.WriteLine(x);
 
         
 
