@@ -6,9 +6,11 @@
     - ToString
     - GetHashCode    
 - boxing/unboxing
-- array of objects
+- array of objects 
 - Array.Contains
 - is/as
+
+
 - operator==
 - calling other constructors
 - getter/setter
