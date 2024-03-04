@@ -3,14 +3,7 @@
 - the object class
 - changing default behavior
     - Equals
-    - ToString
-    - GetHashCode    
 - boxing/unboxing
 - array of objects 
-- Array.Contains
+- Array.Remove
 - is/as
-
-
-- operator==
-- calling other constructors
-- getter/setter

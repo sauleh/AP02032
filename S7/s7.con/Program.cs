@@ -33,6 +33,8 @@ class Program
 
     static void Main5(string[] args)
     {
+        Person p = null;
+        p.Id = 5;
         Person p1 = new Person() { Name = "parvaneh", Id=1 };
         Person p3 = new Person() { Name = "parvaneh", Id=1 };
         Person p2 = new Person() { Name = "arsalan", Id=2 };
@@ -45,8 +47,6 @@ class Program
         System.Console.WriteLine(people.Count);
         bool deleted = people.Remove(p1);
         System.Console.WriteLine(people.Count);
-
-\
         // object o = new Program(); 
         // Person p =  o as Person;
         // System.Console.WriteLine(p.Id);
