@@ -12,8 +12,7 @@
 - ToString
 - string.split
 
+- کار کلاسی
+    - پیاده‌سازی دفترچه تلفن مشابه تمرین  S6 
+    - با استفاده از Dictionary
 
-- not covered
-- operator==
-- calling other constructors
-- getter/setter
