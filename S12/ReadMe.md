@@ -1,0 +1,21 @@
+- Error Handling
+- Exception
+    - what is an exception
+        - types of exceptions:
+            - NullReferenceException
+            - FormatException
+            - FileNotFoundException
+            - DivisionByZeroException
+            - OverflowException
+            - IndexOutOfRangeException
+    - what happens
+        - climbs up the call stack until catch or program exit
+    - catching
+        - try/catch/finally
+    - Usecase:
+        - when return value doesn't exist
+            - constructor
+            - getter/setter
+        - making methd definitions simpler
+        
+    
