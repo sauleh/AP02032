@@ -10,9 +10,9 @@ class Program
         Student s2 = new Student("zali");
         Student s3 = new Student("mori", 4015210);
         Student s4 = new Student("fori", 4015210, 2001);
-        // s.Name = "ali";
-        // s.Id = 25;
-        // s.Age = 18;
+        s.Name = "ali";
+        s.Id = 25;
+        s.Age = -18;
         System.Console.WriteLine(s1);
         System.Console.WriteLine(s2);
         System.Console.WriteLine(s3);

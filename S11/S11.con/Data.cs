@@ -1,3 +1,4 @@
+using System;
 class Student
 {
     public Student(string name)
@@ -13,6 +14,8 @@ class Student
         this.Name = name;
         this.Id = id;
         this._YoB = yob;
+        if (yob < 0)
+            throw new InvalidDataException("yof can't be less than zero");
     }
 
     public override string ToString()
@@ -32,6 +35,8 @@ class Student
         {
             if (value >= 0)
                 _YoB = DateTime.Now.Year - value;
+            else
+                throw InvalidOperationException("age can't be negative");
         }
     }
 
