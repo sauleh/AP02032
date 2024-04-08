@@ -1,21 +1,5 @@
 using System;
 
-public class PersonAgeComparer : IComparer<Person>
-{
-    public int Compare(Person x, Person y)
-    {
-        return 0;
-        // throw new NotImplementedException();
-    }
-}
-
-public class PersonNameComparer : IComparer<Person>
-{
-    public int Compare(Person x, Person y)
-    {
-        return x.Name.CompareTo(y.Name);
-    }
-}
 
 public class Person : IComparable<Person>
 {
@@ -40,9 +24,18 @@ public class Person : IComparable<Person>
     }
 }
 
+//  RAII, Singleton Pattern, Strategy Pattern, getter/setter
+
 class Program2
 {
+
     static void Main(string[] args)
+    {
+        string[] names = { "John", "Emma", "Michael", "Sophia", "William", "Olivia", "James", "Isabel", "Jacob", "Charl" };
+    }
+
+
+    static void Main2(string[] args)
     {
         string[] names = { "John", "Emma", "Michael", "Sophia", "William", "Olivia", "James", "Isabel", "Jacob", "Charl" };
 
@@ -67,10 +60,8 @@ class Program2
         foreach (var person in people)
             Console.WriteLine($"{person.Name}\t{person.Id}\t{person.DateOfBirth.ToShortDateString()}\t{person.Age}\t{person.Height}\t{person.Weight}");
 
-        Array.Sort(people);
+        Array.Sort(people, PersonComparer.PersonAgeComparer);
         System.Console.WriteLine("----------------------");
-        Array.Sort(people, new PersonAgeComparer());
-        Array.Sort(people, new PersonNameComparer());
 
         foreach (var person in people)
             Console.WriteLine($"{person.Name}\t{person.Id}\t{person.DateOfBirth.ToShortDateString()}\t{person.Age}\t{person.Height}\t{person.Weight}");
