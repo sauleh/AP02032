@@ -1,0 +1,11 @@
+- interface
+    - interface inheritance
+        - IShape, IResizbleShape
+    - Generic interfaces
+        - IEnumerable<T>, IComparable<T>, IRepository<T>
+    - Multiple inheritance
+        IShape, IResizable, IResizableShape
+- main benefit: creating a contract, separation
+    - strategy pattern (Sort, IPay)
+    - 
+- Type Safety
