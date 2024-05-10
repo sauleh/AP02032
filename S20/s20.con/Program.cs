@@ -20,6 +20,11 @@ class Program
 {
     delegate int MyStrCmp<T>(T a, T b);
 
+    public static int MyStringComparerFn2(string a, string b) 
+    {
+        return 1;
+    } 
+
     public static int MyStringComparerFn(string a, string b) 
     {
         return a.CompareTo(b);
@@ -46,14 +51,13 @@ class Program
         nums[j] = tmp;
     }
     public delegate T AddFn<T>(T a, T b);
-    public static T Sum<T>(IEnumerable<T> a, AddFn<T> f)
+    public static T Sum<T, MyTypes>(MyTypes a, AddFn<T> f) where MyTypes: IEnumerable<T>
     {
         T sum = default;
         foreach (var v in a)
             sum = f(sum, v);
         return sum;
     }
-
     static string StringAdd(string a, string b)
     {
         if (a == null)
@@ -63,19 +67,27 @@ class Program
         return $"{a}{b}";
     }
 
+    static string StringAdd2(string a, string b)
+    {
+        if (a == null)
+            a = "";
+        if (b == null)
+            b = "";
+        return $"{a}-{b}";
+    }    
+
 
     static int IntAdd(int a, int b) => a + b;
 
-    static void Main(string[] args)
+    static void Main444(string[] args)
     {
         string[] names = new string[] { "ali", "zari", "mozhi"};
-        Console.WriteLine(Sum<string>(names, StringAdd));
+        Console.WriteLine(Sum<string, string[]>(names, StringAdd2));
         int[] mynums = new int[] { 2,3, 4, 5};
-        Console.WriteLine(Sum<int>(mynums, IntAdd));
+        Console.WriteLine(Sum<int, int[]>(mynums, IntAdd));
 
 
 
-        return;
 
 
 

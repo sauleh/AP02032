@@ -29,10 +29,10 @@
         public int Compare(T x, T y) =>
             x.CompareTo(y);
     }
-    public static void Main(string[] args)
+    public static void Main234(string[] args)
     {
         int a = 5, b = 7;
-        int x = max(a, b, new ValueComparer<int>());
+        // int x = max(a, b, new ValueComparer<int>());
 
     }
 }
