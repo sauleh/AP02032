@@ -1,0 +1,10 @@
+- foreach/yield
+- Take
+- ToList
+- ForEach
+- Where
+- Select
+- Skip
+- Max, MaxBy, Min, MinBy
+- GroupBy
+- Average
