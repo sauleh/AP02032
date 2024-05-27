@@ -1,0 +1,23 @@
+﻿<Window x:Class="s28.wpf.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:s28.wpf"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="550" Width="800">
+        <StackPanel HorizontalAlignment = "Center">
+            <Label Content="Name: " Name="lblName" Width = "100" /> 
+            <TextBox Name="tbName" Text="{Binding Name}" Width = "100" />
+
+            <Label Content="Id: " Name="lblId" Width = "100"  />
+            <TextBox Name="tbId" Text="{Binding Id}" Width = "100"  />
+
+            <Label Content="GPA: " Name="lblGPA" Width = "100"  />
+            <TextBox Name="tbGPA" Text="{Binding GPA}" Width = "100" />
+
+            <Button Name="btnUpdate" Content="Update Model" Width = "100" Margin = "10 10"   />
+            <Button Name="btnView" Content="View Model" Width = "100" Margin = "10 10"   />
+            <TextBox Name="txtOutput" Text="" Width = "100" Height = "200"/>
+        </StackPanel>   
+</Window>

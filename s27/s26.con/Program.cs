@@ -2,6 +2,14 @@
 
 class Program
 {
+    static IEnumerable<string> ReadFile(string filename)
+    {
+        using var sr = new StreamReader(filename);
+        string line;
+        while (null != (line = sr.ReadLine()))
+            yield return line;
+    }
+
     static void Main(string[] args)
     {
         Console.Write("Name? ");
